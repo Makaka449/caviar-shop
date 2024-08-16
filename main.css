@@ -1,0 +1,836 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Стили для <header> */
+header {
+  background: rgba(32, 31, 28, 1);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  /* Чтобы полоски не выходили за пределы */
+}
+
+/* Стили для меню-бургера */
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  left: -20px;
+  justify-content: right;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger-bar {
+  width: 30px;
+  /* Ширина полосок */
+  height: 4px;
+  /* Высота полосок */
+  background-color: #fff;
+  margin: 4px 0;
+  /* Отступ между полосками */
+  border-radius: 2px;
+  /* Заокругленные края полосок */
+}
+
+/* Полоски сверху и снизу для <header> */
+header::before,
+header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  /* Высота полосок */
+  background: rgba(32, 31, 28, 1);
+  border-radius: 50% / 100%;
+  /* Заокругленные края */
+}
+
+header::before {
+  top: 0;
+  /* Полоска сверху */
+}
+
+header::after {
+  bottom: 0;
+  /* Полоска снизу */
+}
+
+/*----hero---*/
+
+.hero-svg {
+  padding: 0;
+}
+
+.hero {
+  background-color: rgba(32, 31, 28, 1);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/*----Коло Акції----*/
+
+.circle-container {
+  position: relative;
+  width: 138px;
+  height: 137px;
+  perspective: 1000px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.circle {
+  position: absolute;
+  /* Обеспечивает фиксированное позиционирование */
+
+  width: 138px;
+  height: 137px;
+
+  /* Центрирует элемент */
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+.circle-text {
+  fill: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  dominant-baseline: middle;
+  text-anchor: middle;
+  transform: translateZ(10px);
+  /* Поднимает текст по оси Z */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*-----контент hero------*/
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 353px;
+  box-sizing: border-box;
+  margin-top:-30%;
+}
+
+.promo h1 {
+  background: linear-gradient(224.54deg, #C49337 10.03%, #FCF7CD 31.51%, #EDCD78 48.7%, #A7602B 59.25%, #FDF8D0 74.48%, #BB9138 88.16%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 1.5em;
+  box-sizing: border-box;
+}
+
+.promo .number {
+  font-size: 3.5em;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.promo .number-text {
+  font-size: 1.15em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.promo p {
+  text-align: left;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+
+}
+
+.promo p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 31, 28, 0.5);
+  z-index: -1;
+}
+
+.promo-content{
+  width: 216px;
+}
+
+
+/*-----Кнопка-----*/
+
+.promo button {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  margin: 25px 0 0;
+  box-sizing: border-box;
+}
+
+.promo button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.8);
+  transform: translateY(-3px);
+}
+
+/*----Картки----*/
+
+/* Основний стиль для секції карток */
+.cards {
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Стиль для заголовка секції */
+.cards-logo {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Стиль для окремої картки */
+.card {
+  display: block;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стиль для зображення в картці */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Стиль для заголовка в картці */
+.card h3 {
+  
+  text-align: left;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Стиль для тексту ціни */
+.card p {
+  text-align: left;
+  font-size: 1.1em;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Стиль для кнопки */
+.card button {
+  background-color: rgba(25, 25, 25, 1);;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 80px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Стан при наведенні на картку */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(67, 65, 65, 0.15);
+}
+
+/* Стан при наведенні на кнопку */
+.card button:hover {
+  background-color: #555b5e;
+  transform: translateY(-2px);
+}
+
+/*-------interactiv--------*/
+/* Основний стиль для секції "Про нас" */
+.about-as {
+  display: block;
+  /* Використання Flexbox для горизонтального вирівнювання */
+  align-items: center;
+  justify-content: center;
+  
+  /* Відступи всередині секції для кращого вигляду */
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Відстань між зображенням та контентом */
+}
+
+/* Стиль для зображення */
+.about-as img {
+  
+  display: block;
+  /* Знімає можливий відступ зображення */
+}
+
+/* Стиль для контейнера інтерктивних елементів */
+.interactiv {
+  background: rgba(25, 25, 25, 1);
+  padding: 20px;
+  /* Внутрішні відступи для контейнера */
+  color: rgba(255, 255, 255, 1);
+ 
+  /* Округлення кутів контейнера */
+  max-width: 400px;
+  /* Максимальна ширина контейнера */
+  width: 100%;
+}
+
+/* Стиль для заголовка контейнера */
+.interactiv-logo {
+  font-size: 1.8em;
+  /* Розмір шрифту для заголовка */
+  font-family: 'Montserrat', sans-serif;
+  /* Шрифт */
+  color: rgba(255, 255, 255, 1);
+  /* Білий текст */
+  text-align:left;
+  margin-bottom: 40px;
+  /* Відступ знизу */
+}
+
+.interactiv-div-container{
+  margin: 0 30px;
+  width: 302px;
+  height: 325px;
+}
+
+/* Стиль для контейнерів інтерктивних елементів */
+.interactiv-div {
+  display: flex;
+  /* Використання Flexbox для вирівнювання елементів */
+  align-items:center;
+  /* Вертикальне вирівнювання по центру */
+  justify-content:left;
+  /* Горизонтальне вирівнювання по центру */
+  text-align: center;
+  margin-bottom: 20px;
+  
+  /* Відступ знизу між блоками */
+  position: relative;
+  /* Для позиціонування псевдоелемента */
+  padding-bottom: 10px;
+  /* Внутрішній відступ для псевдоелемента */
+}
+
+/* Псевдоелемент для горизонтальної лінії */
+.interactiv-div::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  /* Товщина лінії */
+  background: rgba(255, 255, 255, 1);
+  /* Колір лінії */
+  display: block;
+  z-index: 0;
+  /* Задній план */
+}
+
+
+
+/* Стиль для заголовків всередині інтерктивних контейнерів */
+.interactiv-div h2 {
+  font-family: 'Montserrat', sans-serif;
+  /* Шрифт */
+  font-size: 2.5em;
+  /* Розмір шрифту */
+  background: linear-gradient(224.54deg, #C49337 10.03%, #FCF7CD 31.51%, #EDCD78 48.7%, #A7602B 59.25%, #FDF8D0 74.48%, #BB9138 88.16%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  /* Видалення відступів */
+  margin-right: 50px;
+  /* Відступ між заголовком і параграфом */
+  position: relative;
+  /* Для розташування поверх псевдоелемента */
+  z-index: 1;
+  /* Впередній план */
+}
+
+#interactiv-div-2 p{
+  margin-left: 55px;
+}
+
+#interactiv-div-3 p {
+  margin-left: 20px;
+}
+
+/* Стиль для параграфів всередині інтерктивних контейнерів */
+.interactiv-div p {
+  font-size: 1.1em;
+  /* Розмір шрифту */
+  color: rgba(255, 255, 255, 0.8);
+  /* Прозорий білий текст */
+  margin: 0;
+  /* Видалення відступів */
+  position: relative;
+  /* Для розташування поверх псевдоелемента */
+  z-index: 1;
+  /* Впередній план */
+}
+
+.last-p-container{
+  padding: 0 35px;
+  width: 302px;
+  height: 286px;
+}
+
+.last-p-container p{
+  text-align: left;
+}
+
+/*-------Як замовити-------*/
+
+/* Основні стилі для секції замовлення */
+.order {
+  padding: 40px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+ 
+}
+
+/* Заголовок секції */
+.order-logo {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Стилі для кожного блоку в секції */
+.order-plus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  width: 300px;
+  height: 212px;
+  margin-bottom: 20px;
+  /* Відступ між блоками */
+  position: relative;
+  /* Для позиціонування лінії */
+}
+
+/* Лінія між блоками */
+.order-plus::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #ddd;
+  position: absolute;
+  bottom: -10px;
+  /* Відстань від нижньої частини блоку */
+  left: 0;
+  width: calc(100% - 20px);
+  /* Ширина лінії трохи менша за ширину блоку */
+  z-index: 1;
+}
+
+.order-plus:last-child::after {
+  display: none;
+  /* Приховати лінію для останнього блоку */
+}
+
+/* Стилі для зображень */
+.order-plus-img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* Заголовок всередині блоку */
+.order-plus-logo {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Параграф всередині блоку */
+.order-plus-p {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);;
+  margin: 5px 0 0;
+}
+
+/*------Форма------*/
+.form{
+  background-color: rgba(25, 25, 25, 1);
+  color: rgba(255, 255, 255, 1);;
+}
+
+/* Стилізація контейнера інформації */
+.form-info {
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 25px;
+  /* Вирівнювання тексту по лівому краю */
+  margin-bottom: 1em;
+  /* Відступ знизу */
+}
+
+/* Стилізація заголовка */
+.form-info-logo {
+  font-family: 'Montserrat', sans-serif;
+  /* Встановлюємо шрифт Montserrat */
+  font-size: 24px;
+  /* Розмір шрифта заголовка */
+  font-weight: 600;
+  /* Вага шрифта заголовка */
+  line-height: 29.26px;
+  /* Висота рядка заголовка */
+  margin-bottom: 0.5em;
+  /* Відступ знизу заголовка */
+  text-align: left;
+}
+
+/* Стилізація параграфа */
+.form-info-p {
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  /* Встановлюємо шрифт Montserrat */
+  font-size: 18px;
+  /* Розмір шрифта параграфа */
+  font-weight: 400;
+  /* Вага шрифта параграфа */
+  line-height: 23px;
+  /* Висота рядка параграфа */
+  margin: 0;
+  /* Видалення відступів по замовчуванню */
+}
+/*----сама форма-----*/
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 35px;
+  position: relative;
+  /* Для позиціонування псевдоелементів */
+}
+
+
+.strip {
+  background: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+  /* Невелике зсування для точного розташування лінії */
+  padding: 0 0;
+  /* Відступи можна регулювати за потреби */
+  height: 1px;
+  width: 100%;
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: none;
+  /* Без рамки */
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  /* Прозорий фон */
+  position: relative;
+  /* Для правильного відображення псевдоелементів */
+  z-index: 2;
+  /* Щоб інпут був поверх полоски */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group button {
+  padding: 10px 20px;
+  width: 158px;
+  height: 49px;
+  background-color: rgba(253, 191, 96, 1);
+  border: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.form-group button:hover {
+  background-color: rgb(194, 137, 51);
+}
+
+/*-------Переваги-------*/
+
+/* Стилізація секції переваг */
+.advantages {
+  padding: 2em 1em;
+  /* Внутрішні відступи секції */
+  background-color: #f8f9fa;
+  /* Фоновий колір */
+  text-align: center;
+  /* Вирівнювання тексту по центру */
+}
+
+.advantages-content {
+  max-width: 1200px;
+  /* Максимальна ширина контенту */
+  margin: 0 auto;
+  /* Центрування контенту */
+}
+
+.advantages-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  /* Розмір шрифта заголовка */
+  font-weight: 600;
+  /* Вага шрифта заголовка */
+  line-height: 1.2;
+  /* Висота рядка заголовка */
+  margin-bottom: 0.1em;
+  /* Відступ знизу заголовка */
+}
+
+.advantages-p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  /* Розмір шрифта параграфа */
+  font-weight: 400;
+  /* Вага шрифта параграфа */
+  line-height: 1.6;
+  /* Висота рядка параграфа */
+  margin-bottom: 2em;
+  /* Відступ знизу параграфа */
+  color: #000;
+  /* Колір тексту параграфа */
+}
+
+.advantages-items {
+  display: flex;
+  flex-wrap: wrap;
+  /* Перехід на новий рядок при необхідності */
+  gap: 0.1em;
+  /* Проміжок між елементами */
+  justify-content: center;
+  /* Центрування елементів по горизонталі */
+}
+
+.advantages-item {
+  
+  /* Тінь для елементів */
+  padding: 0px;
+  /* Внутрішні відступи для елементів */
+ 
+  /* Максимальна ширина кожного елемента */
+  text-align: left;
+  /* Вирівнювання тексту по лівому краю */
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  /* Проміжок між зображенням і текстом */
+}
+
+.advantages-item img {
+  width: 50px;
+  /* Ширина іконок */
+  height: auto;
+  /* Автоматичне підтримання співвідношення сторін */
+}
+
+.advantages-div h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  /* Розмір шрифта заголовків у кожному елементі */
+  font-weight: 500;
+  /* Вага шрифта заголовків */
+  margin-bottom: 0.5em;
+  /* Відступ знизу заголовків */
+}
+
+.advantages-div p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  /* Розмір шрифта тексту в кожному елементі */
+  font-weight: 400;
+  /* Вага шрифта тексту */
+  line-height: 1.5;
+  /* Висота рядка тексту */
+  margin: 0;
+  /* Видалення стандартних відступів */
+}
+
+/*-------Галерея---------*/
+
+/* Основні стилі для секції галереї */
+.gallery {
+  /* Внутрішні відступи секції */
+  background-color: #f0f0f0;
+  /* Фоновий колір */
+}
+
+/* Контейнер для зображень */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Дозволяє переносити зображення на новий рядок */
+  
+  /* Проміжок між зображеннями */
+
+  /* Центрування зображень */
+}
+
+/* Стилізація зображень */
+.gallery-container img {
+  width: calc(50% - 0em);
+  /* Ширина зображення для двох в ряд */
+  height: auto;
+  /* Автоматичне підтримання співвідношення сторін */
+  object-fit: cover;
+  /* Зображення покривають контейнер */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Анімація при зміні */
+}
+
+/* Анімація при наведенні */
+.gallery-container img:hover {
+  transform: scale(1.05);
+  /* Збільшення зображення */
+  opacity: 0.8;
+  /* Зменшення прозорості */
+}
+
+
+
+
+
+
+
+/*Відгуки*/
+
+.comments-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.comment-logo {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.comment .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.comment .avatar img {
+  width: 100%;
+  height: auto;
+}
+
+.comment .comment-content {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+  max-width: 450px;
+}
+
+.comment .comment-content:before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #f0f0f0;
+  border-bottom: 10px solid transparent;
+}
+
+.comment .nickname {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment p {
+  margin: 0;
+}
